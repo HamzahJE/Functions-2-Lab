@@ -228,6 +228,15 @@ const getUserById=(users,id,cb)=>{
 */
 
 // CODE HERE
+// const addingFactory=(num)=> {
+//   return function(num2){
+//     return sum=num+num2;
+//   }
+// }
+
+
+const addingFactory=(num)=> num2 => console.log(num+num2)
+
 
 /*
   Now that you have addingFactory, you can create other
@@ -242,6 +251,8 @@ const getUserById=(users,id,cb)=>{
 */
 
 // CODE HERE
+let addTen= addingFactory(10)
+
 
 /*
   Now the inner function is stored in the addTen variable! 
@@ -254,7 +265,9 @@ const getUserById=(users,id,cb)=>{
 */
 
 // CODE HERE
+addTen(20)
 
+addTen(5)
 /*
   Let's make another function from the addingFactory. 
 
@@ -267,3 +280,22 @@ const getUserById=(users,id,cb)=>{
 */
 
 // CODE HERE
+
+let addTwo=addingFactory(2)
+addTwo(5)
+addTwo(7000000)
+
+
+// Extra Fun
+const add=(num,num2)=>console.log(num+num2)
+const subtract=(num,num2)=>console.log(num-num2)
+const multiplying=(num,num2)=>console.log(num*num2)
+const divide=(num,num2)=>console.log(num/num2)
+
+
+const calculator=(num,callback)=>num2=>callback(num,num2)
+
+let subtracting=calculator(5,subtract)
+subtracting(20)
+
+
